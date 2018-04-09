@@ -8,7 +8,7 @@
   <script src="js/aframe-sun-sky.js"></script>
 </head>
 <body>
-  <a-scene>
+  <a-scene light="defaultLightsEnabled: false">
     <a-assets>
       <img id="p1" src="assets/01/cube1.png"> <!-- front -->
       <img id="p2" src="assets/01/cube2.png"> <!-- right -->
@@ -20,6 +20,9 @@
     </a-assets>
 
     <a-sun-sky></a-sun-sky>
+    <a-entity id='lights'> <!-- ambient light on start -->
+      <a-entity id='ambient' light="type: ambient; color: #FFF; intensity: 0.9" position="1 1 1"></a-entity>
+    </a-entity>
 
     <a-plane id='cube1' position="0 0 -30" rotation="0 0 0" width="60" height="60" src="#p1"></a-plane> <!-- front -->
     <a-plane id='cube2' position="30 0 0" rotation="0 -90 0" width="60" height="60" src="#p2"></a-plane> <!-- right -->
